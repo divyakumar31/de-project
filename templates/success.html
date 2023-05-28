@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+    Success
+{% endblock %}
+
+{% block log_msg %}
+
+    {% if session.name %}
+    <p>Hello, {{ session.name }} </p><a href="/logout"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">logout</button></a>
+    {% else %}
+    <a href="/loginpage"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">login</button></a>
+    {% endif %}
+
+{% endblock %}
+
+{% block body %}
+<h1>{{ msg }}</h1>
+{% endblock %}

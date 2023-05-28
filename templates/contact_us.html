@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block title %}
+: Contact Us
+{% endblock %}
+
+{% block log_msg %}
+
+    {% if session.name %}
+    <p style="padding: 6px 10px; color: rgb(0, 0, 255);">Hello, {{ session.name }} </p><a href="/logout"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">logout</button></a>
+    {% else %}
+    <a href="/loginpage"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">login</button></a>
+    {% endif %}
+
+{% endblock %}
+
+{% block body %}
+<section class="vh-100 form-container">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="{{url_for('static', filename='image/bus_2.png')}}" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="font-family: 'Bree Serif', serif;">
+                <form action="/contactform" method="POST">
+                    <!-- name input -->
+                    <div class="form-outline ">
+                        <input type="text" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Enter your name" name="contact_name" required>
+                        <label class="form-label" for="form3Example3">Name</label>
+                    </div>
+
+                    <!-- contact input -->
+                    <div class="form-outline ">
+                        <input type="tel" id="form3Example4" class="form-control form-control-lg"
+                            placeholder="Enter your contact no." name="contact_phone" minlength="10" maxlength="12"
+                            required>
+                        <label class="form-label" for="form3Example4">Contact No.</label>
+                    </div>
+
+                    <div class="form-outline ">
+                        <input type="email" id="form3Example4" class="form-control form-control-lg"
+                            placeholder="Enter your email" name="contact_mail" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                            maxlength="12" required>
+                        <label class="form-label" for="form3Example4">Email</label>
+                    </div>
+
+                    <!-- Subject input -->
+                    <div class="form-outline ">
+                        <input type="text" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Enter your subject" name="contact_subject" required>
+                        <label class="form-label" for="form3Example3">Subject</label>
+                    </div>
+
+                    <!-- message input -->
+                    <div class="form-outline ">
+                        <!-- <input type="textarea" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Enter your message" name="contact_name" required> -->
+                        <textarea name="contact-message" class="form-control form-control-lg" id="" cols="30" rows="5"
+                            placeholder="Enter your message" required style="resize: none;"></textarea>
+                        <label class="form-label" for="form3Example3">Message</label>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button submit" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;" name="">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

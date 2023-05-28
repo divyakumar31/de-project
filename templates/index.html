@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block log_msg %}
+
+    {% if session.name %}
+    <p style="padding: 6px 10px; color: rgb(0, 0, 255);">Hello, {{ session.name }} </p><a href="/logout"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">logout</button></a>
+    {% else %}
+    <a href="/loginpage"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">login</button></a>
+    {% endif %}
+    
+{% endblock %}
+
+{% block body %}
+
+
+
+<!-- Main Container -->
+<div class="container-fluid">
+
+    <!-- Welcome Container -->
+    <div class="row  justify-content-around" id="home-text-area">
+        <div class="col-lg-4 welcome-text">
+            <h1>Welcome to AMTS</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil adipisci repudiandae natus animi nam.</p>
+        </div>
+
+        <div class="col-lg-4 welcome-img">
+            <img src="{{url_for('static', filename='image/bus_4.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- Service Container -->
+    <hr style="border: 2px solid black;">
+    <div class="row text-center justify-content-around" id="about-text-area">
+        <h1 class="page-heading">Our Services</h1>
+        <div class="col-lg-4 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam maiores rerum, officia dolore enim commodi
+                id quas in ipsum eius? Sapiente minima blanditiis consequatur dolor maiores est quibusdam! Voluptatibus
+                omnis ad, consequatur nemo incidunt non veniam aliquam mollitia quidem nisi.
+            </p>
+        </div>
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_2.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+
+        <hr>
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_1.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+        <div class="col-lg-4 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt ullam soluta architecto neque illum,
+                eligendi at excepturi laboriosam. Non nihil minus totam, quis voluptates alias suscipit et sequi,
+                impedit ab amet perspiciatis ea rerum vel! Omnis asperiores dolore voluptatibus officiis?<br>
+            </p>
+        </div>
+
+        <hr>
+        <div class="col-lg-4 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores culpa dolorum modi quis, ullam ab
+                suscipit quod ea optio alias repudiandae eos fuga perferendis deserunt at esse consequatur, possimus
+                molestias!<br>
+            </p>
+        </div>
+
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_3.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+
+
+        <hr>
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_4.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+        <div class="col-lg-4 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum commodi aspernatur amet eligendi
+                consectetur in, optio numquam laboriosam, voluptatem cumque neque nisi soluta rerum facere totam facilis
+                harum repudiandae sit.<br>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- About Us container -->
+    <hr style="border: 2px solid black;">
+    <div class="row text-center justify-content-around" id="about-text-area">
+        <h1 class="page-heading">About AMTS</h1>
+        <div class="col-lg-4 about-text">
+            <h1>Municipal Transport Service</h1>
+            <p> Regd. Office: - Amdavad Municipal Transport Service, Transport House, Jamalpur, Amdavad - 380022.<br>
+                AMTS is India's largest Municipal Transport Service for local conveyance. It is a voluntary service
+                managed by Amdavad Municipal Corporation under Bombay Provincial Municipal Corporations Act. Amdavad
+                Municipal Transport Service (AMTS) runs the public bus service in the city of Amdavad. The
+                responsibility of the administration of AMTS comes under the Amdavad Municipal Corporation.<br><br>
+            </p>
+        </div>
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_2.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+
+        <hr>
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_1.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+        <div class="col-lg-4 about-text">
+            <h1>AMTS TIMELINES</h1>
+            <p> There is continuous hike in population vis-à-vis the industrial development. The walled area of the city
+                experience congestion of population and with that the jurisdiction of municipality also expanded. The
+                housing societies and colonies had been started in the surrounding areas in order to reduce the density
+                somewhere in 1940. Leading citizens, lawyers, labour leaders, industrialists and traders were elected as
+                municipal members in those days. Shri Manibhai Chaturbhai Shah was the municipal President. Dr.
+                A.N.Tankaria was the Vice-President and Shri Navinchandra Desai was standing committee Chairman.
+                Moreover Shri Nandlal Bodiwala, Shri Arjunlal Bhogilal Lala, Shri Dolatram Umedram Shah and Shri
+                Dadubhai Amin were among municipality members. They were concerned about the welfare of the citizens and
+                the ideals of the social workers in that generation were very high with warm feelings for the society.
+                They were vigilant for the well-being of the city. The very first resolution was passed by the
+                municipality on 10th June 1940 in the General Board meeting (to begin transport services vide Resolution
+                No. 476 dated 10-6-40). This task was put on the board by the standing committee (vide committee
+                Resolution No. 878 dated 4-6-1940)<br>
+            </p>
+        </div>
+
+        <hr>
+        <div class="col-lg-4 about-text">
+            <h1>Municipal Transport Service</h1>
+            <p> The committee formed in June 1940 presented its plan to the General Board on 21st August, 1940 vide
+                Resolution No.1161 dtd.21-8-40. The Board resolved in addition that the plan should be sanctioned by
+                R.T.A. and it should permit to manage the bus-routes mentioned in the resolution for five years. If the
+                R.T.A. proposes to increase number of Bus-routes, or if the municipality thinks so by its experience,
+                more routes will be added. Other areas such as Naroda , Vasana, Sabarmati Hansol etc. also will be
+                provided with the service if the need arises, and due approvals will be obtained from Commissioner of
+                Northern region as per municipal Burro Act. If the municipality does not get such approval, and some
+                other organisation obtains the same, RTA must clarify that such organisation will not allow the
+                passengers within municipal limit to use the facility of transport.<br>
+            </p>
+        </div>
+
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_3.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+
+
+        <hr>
+        <div class="col-lg-4 about-img">
+            <img src="{{url_for('static', filename='image/bus_4.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+        <div class="col-lg-4 about-text">
+            <h1>AMTS TIMELINES</h1>
+            <p> There is continuous hike in population vis-à-vis the industrial development. The walled area of the city
+                experience congestion of population and with that the jurisdiction of municipality also expanded. The
+                housing societies and colonies had been started in the surrounding areas in order to reduce the density
+                somewhere in 1940. Leading citizens, lawyers, labour leaders, industrialists and traders were elected as
+                municipal members in those days. Shri Manibhai Chaturbhai Shah was the municipal President. Dr.
+                A.N.Tankaria was the Vice-President and Shri Navinchandra Desai was standing committee Chairman.
+                Moreover Shri Nandlal Bodiwala, Shri Arjunlal Bhogilal Lala, Shri Dolatram Umedram Shah and Shri
+                Dadubhai Amin were among municipality members. They were concerned about the welfare of the citizens and
+                the ideals of the social workers in that generation were very high with warm feelings for the society.
+                They were vigilant for the well-being of the city. The very first resolution was passed by the
+                municipality on 10th June 1940 in the General Board meeting (to begin transport services vide Resolution
+                No. 476 dated 10-6-40). This task was put on the board by the standing committee (vide committee
+                Resolution No. 878 dated 4-6-1940)<br>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Container Ends -->
+</div>
+{% endblock %}

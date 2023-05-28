@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block title %}
+: Services
+{% endblock %}
+
+{% block log_msg %}
+
+    {% if session.name %}
+    <p style="padding: 6px 10px; color: rgb(0, 0, 255);">Hello, {{ session.name }} </p><a href="/logout"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">logout</button></a>
+    {% else %}
+    <a href="/loginpage"><button class="btn btn-outline-dark rounded-pill" id="search-btn" type="button">login</button></a>
+    {% endif %}
+
+{% endblock %}
+
+{% block body %}
+<!-- Service Container -->
+<!-- <div class="container-fluid">
+    <div class="row text-center">
+        <h1 id="services">Our Services</h1>
+
+        <div class="card-group">
+            <div class="card align-items-center pt-3 mx-3 card-border">
+                <img src="D:\de_project\AMTS_Bootstrap\images\bus-cartoon1.jpg" width="50px ;"
+                    class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card align-items-center pt-3 mx-3 card-border">
+                <img src="D:\de_project\AMTS_Bootstrap\images\bus-cartoon2.jpg" width="50px ;"
+                    class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card align-items-center pt-3 mx-3 card-border">
+                <img src="D:\de_project\AMTS_Bootstrap\images\bus-cartoon1.jpg" width="50px ;"
+                    class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal
+                        height action.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container-fluid">
+    <div class="row text-center justify-content-around" id="about-text-area">
+        <h1 class="page-heading">Our Services</h1>
+        <div class="col-lg-6 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam maiores rerum, officia dolore enim commodi id quas in ipsum eius? Sapiente minima blanditiis consequatur dolor maiores est quibusdam! Voluptatibus omnis ad, consequatur nemo incidunt non veniam aliquam mollitia quidem nisi.
+            </p>
+        </div>
+        <div class="col-lg-6 about-img">
+            <img src="{{url_for('static', filename='image/bus_2.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+
+        <hr>
+        <div class="col-lg-6 about-img">
+            <img src="{{url_for('static', filename='image/bus_1.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+        <div class="col-lg-6 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt ullam soluta architecto neque illum, eligendi at excepturi laboriosam. Non nihil minus totam, quis voluptates alias suscipit et sequi, impedit ab amet perspiciatis ea rerum vel! Omnis asperiores dolore voluptatibus officiis?<br>
+            </p>
+        </div>
+
+        <hr>
+        <div class="col-lg-6 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores culpa dolorum modi quis, ullam ab suscipit quod ea optio alias repudiandae eos fuga perferendis deserunt at esse consequatur, possimus molestias!<br>
+            </p>
+        </div>
+
+        <div class="col-lg-6 about-img">
+            <img src="{{url_for('static', filename='image/bus_3.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+
+
+        <hr>
+        <div class="col-lg-6 about-img">
+            <img src="{{url_for('static', filename='image/bus_4.png')}}" alt="image of AMTS" class="img-fluid">
+        </div>
+        <div class="col-lg-6 about-text">
+            <h1>AMTS BUS</h1>
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum commodi aspernatur amet eligendi consectetur in, optio numquam laboriosam, voluptatem cumque neque nisi soluta rerum facere totam facilis harum repudiandae sit.<br>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

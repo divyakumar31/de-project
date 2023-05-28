@@ -1,0 +1,104 @@
+/* Body */
+body {
+    background-color: #b7d4ff;
+}
+
+/* Navbar */
+nav {
+    background-color: #b7d4ff;
+    /* position: sticky; */
+}
+
+.nav-link {
+    color: #000;
+    font-family: 'Alegreya', serif;
+    font-size: 1.2rem;
+    border-radius: 12px;
+}
+
+#nav-ul li a:hover {
+    background-color: rgb(12, 103, 240);
+    color: white;
+}
+
+#search-btn {
+    font-family: 'Alegreya', serif;
+}
+
+#search-btn:hover {
+    color: white;
+    background-color: rgb(12, 103, 240);
+    border: rgb(12, 103, 240);
+}
+
+/* Welcome page */
+/* Home text area */
+#home-text-area {
+    height: 650px;
+    align-items: center;
+    /* margin-bottom: auto; */
+    /* background-color: #b7d4ff; */
+}
+
+/* .welcome-text {
+    padding: 100px;
+     border: 2px solid red; 
+} */
+
+/* .welcome-img {
+    border: 2px solid yellow;
+} */
+
+
+
+/* Body(Services) */
+
+.welcome-text h1 {
+    font-size: 5rem;
+}
+
+.welcome-text p {
+    font-size: 23px;
+}
+
+
+
+/* About text */
+.about-text {
+    /* padding: 100px; */
+    /* margin: auto; */
+    text-align: left;
+    /* border: 2px solid red; */
+}
+
+/* .about-img {
+    border: 2px solid yellow;
+} */
+
+#about-text-area{
+    align-items: center;
+}
+
+
+/* about end */
+
+h1,
+h5 {
+    font-family: 'Alegreya', serif;
+}
+
+p {
+    font-family: 'Bree Serif', serif;
+}
+
+
+/* Form container */
+.form-container{
+    background-color: #b7d4ff;
+}
+
+
+/* utility */
+.page-heading {
+    font-size: 4rem;
+}
