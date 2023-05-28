@@ -1,2 +1,2 @@
 # deproject
-DE project
+This is my DE project.
