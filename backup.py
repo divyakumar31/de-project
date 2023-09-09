@@ -1,7 +1,5 @@
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
-from werkzeug.utils import secure_filename
-import os
 from flask import Flask, render_template, url_for, redirect, request, session
 # The Session instance is not used for direct access, you should always use flask.session
 # import flask.sessions
@@ -11,7 +9,7 @@ app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.secret_key = "super secret key"
-app.config['UPLOAD_FOLDER'] = "static/userdata/"
+
 
 
 # Ensure templates are auto reloaded
@@ -56,7 +54,7 @@ def loginpage():
 @app.route("/loginform", methods=["GET", "POST"])
 def loginform():
     if request.method == "POST":
-        conn = sqlite3.connect("passdetails.sql")
+        conn = sqlite3.connect("passusers.db")
         db = conn.cursor()
 
         username = request.form.get("username")        
@@ -95,7 +93,7 @@ def signup():
 @app.route("/signupform", methods=["GET", "POST"])
 def signupform():
     if request.method == "POST":
-        conn = sqlite3.connect("passdetails.sql")
+        conn = sqlite3.connect("passusers.db")
         db = conn.cursor()
 
         username = request.form.get("username")
@@ -110,12 +108,10 @@ def signupform():
 
         password = generate_password_hash(password)
         query = f'INSERT INTO userlogindetails (username, password, useremail) VALUES("{username}", "{password}", "{useremail}")'
-        
         try:
             db.execute(query)
-            conn.commit()
             db.close()
-            conn.close()
+            conn.commit()
             return redirect("/")
             # return render_template("success.html", msg="You are registered successfully.")
         except:
@@ -135,74 +131,22 @@ def logout():
 
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
-    if session.get("name"):
-        if request.method == "GET":
-            conn = sqlite3.connect("passdetails.sql")
-            db = conn.cursor()
-            username = session["name"]
-            sql = f"SELECT * FROM userdetails WHERE username='{username}'"
-            print(sql)
-            try:
-                db.execute(sql)
-                userdetails = db.fetchone()
-                uname = userdetails[0]
-                userimage = userdetails[4]
-                # print(userimage)
-                db.close()
-                conn.close()
-                # userimagelink = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(userimage))
-                # print(userimagelink)
-                # print(uname)
-                return render_template("dashboard.html", uname = f"{uname}", image1 = userimage)
-            except:
-                # print("Hello dear!, haha")
-                return render_template("dashboard.html")
-        else:
-            return render_template("dashboard.html")
-    else:
-        return render_template("sorry.html")
-    
+    return render_template("dashboard.html")
+
 
 @app.route("/apply-pass", methods=["GET", "POST"])
 def applypass():
+    # render_template("passform.html")
+    # return None
+    # redirect("/passform")
     return render_template("passform.html")
 
 
 @app.route("/passform", methods=["GET", "POST"])
 def passform():
-    if session.get("name"):
-        if request.method == "POST":
-            conn = sqlite3.connect("passdetails.sql")
-            db = conn.cursor()
-
-            name = request.form.get("userfullname")
-            contactno = request.form.get("userphone", type=int)
-            email = request.form.get("usermail")
-            college = request.form.get("usercollege")
-            username = session["name"]
-            userimage = request.files["userimage"]
-            userimage.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(userimage.filename)))
-            # url = userimage.filename
-
-            # userimage.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-            sql = f"INSERT INTO userdetails (name, contactno, email, college, userimage, username) VALUES ('{name}', {contactno}, '{email}', '{college}', '{userimage.filename}', '{username}')"
-            print(sql)
-
-            try:
-                db.execute(sql)
-                conn.commit()
-                db.close()
-                conn.close()
-                return render_template("success.html", msg="You're request sent successfully.")
-            
-            except:
-                return render_template("sorry.html", msg="Try Again.")
-
-            # pass
-        else:
-            return render_template("dashboard.html")
-
+    
+    pass
+    return render_template("dashboard.html")
 
 
 

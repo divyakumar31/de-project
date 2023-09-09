@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <!-- <link rel="shortcut icon" href="D:\de_project\AMTS_Bootstrap\images\AMTS_Logo.png" type="image/x-icon"> -->
     <link rel="shortcut icon" href="{{url_for('static', filename='image/AMTS_Logo.png')}}" type="image/x-icon">
-    <title>DashBoard</title>
+    <title> {% block title %} DashBoard {% endblock %}</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link rounded-pill px-3" href="/">APPLY FOR BUS PASS</a>
+                        <a class="nav-link rounded-pill px-3" href="/apply-pass">APPLY FOR BUS PASS</a>
                     </li>
 
                     <li class="nav-item">
@@ -61,7 +61,32 @@
             </div>
         </div>
     </nav>
-    <h1>Hello, {{ session.name }}</h1>
+    <h1></h1>
+
+    {% block body %}
+    <!-- Dashboard Container -->
+    <div class="row  justify-content-around" id="home-text-area">
+        <div class="col-lg-4 welcome-text">
+            {% if uname %}
+                <h1>Hello, {{ uname }}</h1>
+            {% else %}
+                <h1>Hello, {{ session.name }}</h1>
+            {% endif %}
+            <p>Welcome to AMTS e-portal.</p>
+        </div>
+
+        <div class="col-lg-4 welcome-img">
+            {% if image1 %}
+            {% set imagename= 'userdata/' + image1 %}
+                <img src="{{ url_for('static', filename=imagename ) }}" alt="image of User" class="img-fluid" id="userimage">
+                {% else %}   
+                <img src="{{ url_for('static', filename='image/bus_1.png') }}" alt="default image" class="img-fluid">
+                {% endif %}
+                
+        </div>
+    </div>
+
+    {% endblock %}
 </body>
 
 </html>

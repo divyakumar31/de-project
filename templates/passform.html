@@ -1,0 +1,60 @@
+{% extends "dashboard.html" %}
+{% block title %}
+PassForm
+{% endblock %}
+{% block body %}
+<h1 style="text-align: center;" class="page-heading">APPLY FOR BUS PASS</h1>
+<section class="vh-100 form-container">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="{{url_for('static', filename='image/bus_2.png')}}" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form action="/passform" method="POST" enctype="multipart/form-data" style="font-family: 'Bree Serif', serif;">
+                    <!-- name input -->
+                    <div class="form-outline ">
+                        <input type="text" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Enter your name" name="userfullname" required>
+                        <label class="form-label" for="form3Example3">Name</label>
+                    </div>
+
+                    <!-- contact input -->
+                    <div class="form-outline ">
+                        <input type="tel" id="form3Example4" class="form-control form-control-lg"
+                            placeholder="Enter your contact no." name="userphone" minlength="10" maxlength="12"
+                            required>
+                        <label class="form-label" for="form3Example4">Contact No.</label>
+                    </div>
+
+                    <div class="form-outline ">
+                        <input type="email" id="form3Example4" class="form-control form-control-lg"
+                            placeholder="Enter your email" name="usermail" required>
+                        <label class="form-label" for="form3Example4">Email</label>
+                    </div>
+
+                    <!-- Subject input -->
+                    <div class="form-outline ">
+                        <input type="text" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Enter your college name" name="usercollege" required>
+                        <label class="form-label" for="form3Example3">College Name</label>
+                    </div>
+                    
+                    <!-- message input -->
+                    <div class="form-outline ">
+                        <input type="file" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Photo" name="userimage" required>
+                        <label class="form-label" for="form3Example3">Upload your photo</label>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button submit" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;" name="">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
